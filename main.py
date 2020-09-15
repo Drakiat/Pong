@@ -20,8 +20,8 @@ textY = 10
 ballImg = pygame.image.load('football2.png')
 ballX = 480
 ballY = 350
-velX = -5
-velY = -5
+velX = -1
+velY = -1
 
 # P1
 playerX = 0
@@ -85,9 +85,9 @@ while running:
     # player2 movement
 
     if player2Y == 610:
-        movement2 = -10
+        movement2 = -1
     elif player2Y == 0:
-        movement2 = 10
+        movement2 = 1
     player2Y += movement2
     # INVINCIBLE
     # player2Y = ballY
@@ -97,7 +97,7 @@ while running:
     # ball movement
     if ballX == 0:
         if collision1:
-            velX = 5
+            velX = 1
             pongsound = mixer.Sound("pong.wav")
             pongsound.play()
         else:
@@ -109,7 +109,7 @@ while running:
 
     elif ballX == 970:
         if collision2:
-            velX = -5
+            velX = -1
             pongsound = mixer.Sound("pong.wav")
             pongsound.play()
         else:
@@ -120,9 +120,9 @@ while running:
             print("P1:" + str(P1_score) + " P2:" + str(P2_score))
 
     if ballY == 0:
-        velY = 5
+        velY = 1
     elif ballY == 630:
-        velY = -5
+        velY = -1
 
     ballX += velX
     ballY += velY
